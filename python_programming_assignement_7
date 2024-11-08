@@ -1,0 +1,35 @@
+name = input("Enter your name: ")
+print(f"Hello, {name}! Let's explore your favorite numbers.")
+
+favorite_numbers = []
+for i in range(3):
+    number = int(input(f"Enter your {i+1} favorite number: "))
+    favorite_numbers.append(number)
+
+even_odd_numbers = []
+for number in favorite_numbers:
+    if number % 2 == 0:
+        even_odd_numbers.append((number, "even"))
+    else:
+        even_odd_numbers.append((number, "odd"))
+
+print("\nLet's square your favorite numbers:")
+for number in favorite_numbers:
+    square = number ** 2
+    print(f"{number}^2 = {square}")
+
+number_sum = sum(favorite_numbers)
+print(f"\nThe sum of your favorite numbers is {number_sum}. That's a great number!")
+
+is_prime = True
+for i in range(2, int(number_sum**0.5) + 1):
+    if number_sum % i == 0:
+        is_prime = False
+        break
+
+if is_prime:
+    print(f"Wow, {number_sum} is a prime number! That's quite special.")
+else:
+    print(f"Unfortunately, {number_sum} is not a prime number.")
+
+    
